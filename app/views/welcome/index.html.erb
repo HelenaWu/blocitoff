@@ -3,6 +3,8 @@
 
 <% if user_signed_in? %>
   <%= link_to 'sign out', destroy_user_session_path, method: :delete %> 
+</br>
+  <%= link_to 'my info', user_show_path %> 
 <% else %>
   <%= link_to 'existing user?', new_user_session_path %> 
   <%= link_to 'sign up!', new_user_registration_path %> 
