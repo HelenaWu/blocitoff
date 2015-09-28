@@ -1,0 +1,9 @@
+Description: <%= item.description %>
+</br>
+Completion: <%= item.status %>
+<%= link_to 'check', edit_user_item_path(current_user, item) %> 
+</br>
+Days left: <%= (7 - (Time.now - item.created_at)/1.day).round(1) %> 
+
+</br>
+</br>

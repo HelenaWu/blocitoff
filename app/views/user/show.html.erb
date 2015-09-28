@@ -3,3 +3,14 @@
 User name: <%= current_user.name %>
 </br>
 User email: <%= current_user.email %>
+
+</br>
+
+Create new item here: <%= link_to ' new item', new_user_item_path(current_user) %>
+</br> 
+Existing items <%= link_to 'all items', user_items_path(current_user) %> 
+
+</br> 
+
+</br> 
+<%= link_to 'back', user_show_path %>
