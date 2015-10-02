@@ -11,7 +11,7 @@ end
 group :development do 
   gem 'sqlite3'
 end
-
+gem 'faker'
 gem 'devise'
 gem 'figaro', '1.0'
 # Use SCSS for stylesheets
