@@ -53,8 +53,8 @@ class ItemsController < ApplicationController
     end
   end
   
-private
-def items_params
-  params.require(:item).permit(:description)
-end
-end
+  private
+  def items_params
+    params.require(:item).permit(:description)
+  end
+  end
