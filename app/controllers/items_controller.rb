@@ -36,13 +36,23 @@ class ItemsController < ApplicationController
     end
 
     redirect_to user_items_path(current_user)
-
   end
 
   def destroy
+    @item = Item.find(params[:id])
+    if @item.destroy
+      flash[:notice] = "succesfully deleted."
+      # redirect_to user_items_path(current_user)
+    else
+      flash[:error] = "failed to delete."
+      # render :show
+    end
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
-
-
+  
 private
 def items_params
   params.require(:item).permit(:description)

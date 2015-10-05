@@ -1,9 +1,10 @@
-Description: <%= item.description %>
-</br>
-Completion: <%= item.status %>
-<%= link_to 'check', edit_user_item_path(current_user, item) %> 
-</br>
-Days left: <%= item.days_left %> 
-
-</br>
-</br>
+<%= content_tag :div, id: "item-#{item.id}" do %>
+  Description: <%= item.description %>
+  </br>
+  Completion: <%= item.status %>
+  <%= link_to 'Check as complete', edit_user_item_path(current_user, item) %>
+  <%= link_to 'delete',[current_user, item], method: :delete, remote: true %>
+  </br>
+  Days left: <%= item.days_left %> 
+  </br>
+<% end %>
