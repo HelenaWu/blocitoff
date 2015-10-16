@@ -38,6 +38,9 @@ class ItemsController < ApplicationController
     redirect_to user_items_path(current_user)
   end
 
+  def update
+  end
+
   def destroy
     @item = Item.find(params[:id])
     if @item.destroy
@@ -54,7 +57,7 @@ class ItemsController < ApplicationController
   end
   
   private
-  def items_params
-    params.require(:item).permit(:description)
-  end
+    def items_params
+      params.require(:item).permit(:description)
+    end
   end
